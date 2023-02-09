@@ -7,7 +7,7 @@
     
 </head>
     <body>
-	 <iframe id='iframe' src="https://blacktoon214.com/"
+	 <iframe id='iframe' src="https://blacktoon.com/"
 	 style="overflow-x:hidden; overflow:auto; width:100%; height:100%;"
 	 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 	 </iframe>
@@ -16,26 +16,22 @@
 	
 
 	<script>
-		var _value="";
 		 
-		  var url = unescape(location.href);
-		  var pm  = url.split('?');
+		var url = unescape(location.href);
+		var pm  = url.split('?');
 
-		  var params   = pm[1].split('&');
-		  for( var i=0; i<params.length; i++ )
-		  {
-		   var param = params[i].split('=');
-			alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
-		  	_value=param[1];
-		  }
+		var params   = pm[1].split('&');
+		for( var i=0; i<params.length; i++ )
+		{
+			var param = params[i].split('=');
+			//alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
+			newUrl = "https://blacktoon" + param[1] + ".com";
+			if (param[0] == 'v') {
+				$('#iframe').attr('src', newUrl);
+				//alert("newUrl : " + newUrl);
+			}
+		}
 		
-
-	  function element_hide(){
-		  $('.iframe').hide();
-	  }
-	  function element_show(){
-		  $('.iframe').show();
-	  }
 
 		$('#iframe').on('load', function() {
 
