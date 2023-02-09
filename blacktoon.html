@@ -1,0 +1,63 @@
+<html>
+    <head>
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+    
+</head>
+    <body>
+	 <iframe id='iframe' src="https://blacktoon214.com/"
+	 style="overflow-x:hidden; overflow:auto; width:100%; height:100%;"
+	 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	 </iframe>
+	<br>
+
+	
+
+	<script>
+		var _value="";
+		 
+		  var url = unescape(location.href);
+		  var pm  = url.split('?');
+
+		  var params   = pm[1].split('&');
+		  for( var i=0; i<params.length; i++ )
+		  {
+		   var param = params[i].split('=');
+			alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
+		  	_value=param[1];
+		  }
+		
+
+	  function element_hide(){
+		  $('.iframe').hide();
+	  }
+	  function element_show(){
+		  $('.iframe').show();
+	  }
+
+		$('#iframe').on('load', function() {
+
+
+			$('#iframe').contents().find('.container banner mt-2').remove();
+	  		$('#iframe').contents().find('.col-12').remove();
+		});
+			
+
+		$(document).ready(function() {
+		    $.each('iframe', function(k, v) {
+		        $(this).contents().find('.container banner mt-2').remove();
+		        $(this).contents().find('.col-12').remove();
+		    });
+		});
+	 
+	  
+	  
+	 
+	</script>
+ 
+
+
+</body>
+</html>
